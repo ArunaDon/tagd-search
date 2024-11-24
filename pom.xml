@@ -11,6 +11,7 @@
 	<groupId>com.tagdsearch.demo</groupId>
 	<artifactId>tagd-search</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
 	<name>tagd-search</name>
 	<description>Demo project for Spring Boot</description>
 	<url/>
@@ -20,6 +21,10 @@
 	<developers>
 		<developer/>
 	</developers>
+	<modules>
+		<module>elastic</module>
+		<module>app-config-data</module>
+	</modules>
 	<scm>
 		<connection/>
 		<developerConnection/>
