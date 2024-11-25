@@ -1,4 +1,4 @@
-package com.microservices.demo.elastic.model.index;
+package com.tagdsearch.demo.elastic.model.index;
 
 public interface IndexModel {
     String getId();

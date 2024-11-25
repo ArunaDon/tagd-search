@@ -14,12 +14,10 @@
 	<name>tagd-search</name>
 	<description>Demo project for Spring Boot</description>
 	<modules>
-		<!-- This is an XML comment
-
-		<module>elastic</module> -->
+		<module>elastic</module>
 		<module>app-config-data</module>
 		<module>config-server</module>
-		<!-- <module>contract-search-service</module> -->
+		<module>contract-search-service</module>
 	</modules>
 	<packaging>pom</packaging>
 	<scm>
@@ -45,12 +43,20 @@
 		<spring-cloud-starter-config.version>4.1.3</spring-cloud-starter-config.version>
 		<spring-boot-starter-security.version>3.3.4</spring-boot-starter-security.version>
 		<spring-cloud-dependencies.version>2023.0.3</spring-cloud-dependencies.version>
+		<elasticsearch.version>8.15.2</elasticsearch.version>
+		<elasticsearch-rest-high-level-client.version>7.17.24</elasticsearch-rest-high-level-client.version>
 	</properties>
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
 				<groupId>com.tagdsearch.demo</groupId>
 				<artifactId>app-config-data</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.tagdsearch.demo</groupId>
+				<artifactId>elastic-model</artifactId>
 				<version>${project.version}</version>
 			</dependency>
 
@@ -108,6 +114,19 @@
 				<version>${spring-cloud-dependencies.version}</version>
 				<type>pom</type>
 				<scope>import</scope>
+			</dependency>
+
+			<!-- https://mvnrepository.com/artifact/org.elasticsearch/elasticsearch -->
+			<dependency>
+				<groupId>org.elasticsearch</groupId>
+				<artifactId>elasticsearch</artifactId>
+				<version>${elasticsearch.version}</version>
+			</dependency>
+			<!-- https://mvnrepository.com/artifact/org.elasticsearch.client/elasticsearch-rest-high-level-client -->
+			<dependency>
+				<groupId>org.elasticsearch.client</groupId>
+				<artifactId>elasticsearch-rest-high-level-client</artifactId>
+				<version>${elasticsearch-rest-high-level-client.version}</version>
 			</dependency>
 
 

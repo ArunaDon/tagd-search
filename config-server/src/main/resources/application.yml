@@ -14,6 +14,7 @@ spring:
       server:
         git:
           uri: https://github.com/ArunaDon/tagd-configsrv-repo.git
+          default-label: master
           username: arunadon
           password: '{cipher}fb70f264205331a45c3046c71a606877b87ecd5c9e30c3dd69756b11759231a1f75251b0e57667f696dd93413f441fb5642a3c9a46fe4f493e53317361dbe1bb'
           clone-on-start: true
