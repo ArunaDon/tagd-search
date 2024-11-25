@@ -6,6 +6,7 @@ import com.tagdsearch.demo.elastic.index.client.util.ElasticIndexUtil;
 import com.tagdsearch.demo.elastic.model.index.impl.ContractIndexModel;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.data.elasticsearch.core.ElasticsearchOperations;
 import org.springframework.data.elasticsearch.core.IndexedObjectInformation;
 import org.springframework.data.elasticsearch.core.mapping.IndexCoordinates;
@@ -16,6 +17,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Service
+@ConditionalOnProperty(name="elastic-config.is-repository", havingValue = "false", matchIfMissing = true)
 public class ContractElasticIndexClient implements ElasticIndexClient<ContractIndexModel> {
 
     private static final Logger LOG = LoggerFactory.getLogger(ContractElasticIndexClient.class);
