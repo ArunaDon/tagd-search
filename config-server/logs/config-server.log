@@ -1,0 +1,1 @@
+2024-11-25 01:19:17 [Thread-3] WARN  o.s.c.c.s.e.MultipleJGitEnvironmentRepository - Failed to delete temporary directory on exit: java.nio.file.AccessDeniedException: C:\Users\danan\AppData\Local\Temp\config-repo-17201688670745441304\.git\objects\pack\pack-ae5e9d17ee168419d25f03333124a9eaf6fbb84a.idx

@@ -1,0 +1,28 @@
+server:
+  port: 8888
+
+logging:
+  level:
+    ROOT: INFO
+    org.spring.framework.cloud.config: DEBUG
+
+spring:
+  application:
+    name: configserver
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/ArunaDon/tagd-configsrv-repo.git
+          username: arunadon
+          password: '{cipher}fb70f264205331a45c3046c71a606877b87ecd5c9e30c3dd69756b11759231a1f75251b0e57667f696dd93413f441fb5642a3c9a46fe4f493e53317361dbe1bb'
+          clone-on-start: true
+      bootstrap: true
+    fail-fast: true
+  security:
+    user:
+      name: spring_cloud_user
+      password: '{cipher}4eed5e9506af20cd39a2e9f736c06423c83f3026d5aa3332a613a58cee26a38f355a1e6e9cbf666b36f5e39524fec73d'
+
+encrypt:
+  key: Demo_Pwd!2020
