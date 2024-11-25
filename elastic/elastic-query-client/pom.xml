@@ -23,6 +23,10 @@
             <groupId>com.tagdsearch.demo</groupId>
             <artifactId>elastic-model</artifactId>
         </dependency>
+        <dependency>
+            <groupId>com.tagdsearch.demo</groupId>
+            <artifactId>common-util</artifactId>
+        </dependency>
     </dependencies>
 
 </project>

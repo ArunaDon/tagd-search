@@ -18,7 +18,8 @@
 		<module>app-config-data</module>
 		<module>config-server</module>
 		<module>contract-search-service</module>
-	</modules>
+        <module>common-util</module>
+    </modules>
 	<packaging>pom</packaging>
 	<scm>
 		<connection/>
@@ -70,6 +71,12 @@
 			<dependency>
 				<groupId>com.tagdsearch.demo</groupId>
 				<artifactId>elastic-config</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.tagdsearch.demo</groupId>
+				<artifactId>common-util</artifactId>
 				<version>${project.version}</version>
 			</dependency>
 
