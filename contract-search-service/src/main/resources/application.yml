@@ -1,13 +1,11 @@
 spring:
-  application:
-    name: contract-search-service
   profiles:
     active: elastic_query
   cloud:
     config:
       name: contract-search-service,config-client
       username: spring_cloud_user
-      password: '{cipher}0889865e864736e2220f5fe9d861f9f883b4b2d505d78057c46f1fe607addbb97f57807d4af9d19c82b3150caf5d44d2'
+      password: '{cipher}c05c309e0c5e79cc1747f0f808aec055a2fba38cfc74a153515da551286353215dd82e6ccffba93c09b128ff75bf440d'
   config:
     import: "configserver:http://localhost:8888"
 

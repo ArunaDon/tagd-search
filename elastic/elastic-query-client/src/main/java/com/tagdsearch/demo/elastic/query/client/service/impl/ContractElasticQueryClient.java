@@ -42,10 +42,6 @@ public class ContractElasticQueryClient implements ElasticQueryClient<ContractIn
         this.elasticQueryUtil = queryUtil;
     }
 
-
-
-
-
     @Override
     public ContractIndexModel getIndexModelById(String id) {
         Query query = elasticQueryUtil.getSearchQueryById(id);

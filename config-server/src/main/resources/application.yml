@@ -16,14 +16,14 @@ spring:
           uri: https://github.com/ArunaDon/tagd-configsrv-repo.git
           default-label: master
           username: arunadon
-          password: '{cipher}fb70f264205331a45c3046c71a606877b87ecd5c9e30c3dd69756b11759231a1f75251b0e57667f696dd93413f441fb5642a3c9a46fe4f493e53317361dbe1bb'
+          password: '{cipher}f61b05279c1718123e4216ff32a94bbf62af8b21d69b02c153a7e9c07fc319b15118aa08a9ce335383e8a2a981ad8b0f8868e1a5fd5d842810c5f498f64d4a30'
           clone-on-start: true
       bootstrap: true
     fail-fast: true
   security:
     user:
       name: spring_cloud_user
-      password: '{cipher}4eed5e9506af20cd39a2e9f736c06423c83f3026d5aa3332a613a58cee26a38f355a1e6e9cbf666b36f5e39524fec73d'
+      password: '{cipher}c05c309e0c5e79cc1747f0f808aec055a2fba38cfc74a153515da551286353215dd82e6ccffba93c09b128ff75bf440d'
 
 encrypt:
   key: Demo_Pwd!2020
