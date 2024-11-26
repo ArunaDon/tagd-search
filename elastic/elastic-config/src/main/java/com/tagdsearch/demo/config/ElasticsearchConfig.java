@@ -4,6 +4,7 @@ import co.elastic.clients.elasticsearch.ElasticsearchClient;
 import co.elastic.clients.json.jackson.JacksonJsonpMapper;
 import co.elastic.clients.transport.rest_client.RestClientTransport;
 import org.apache.http.HttpHost;
+import org.apache.http.HttpRequestInterceptor;
 import org.elasticsearch.client.RestClient;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -12,6 +13,8 @@ import org.springframework.data.elasticsearch.repository.config.EnableElasticsea
 import org.springframework.web.util.UriComponents;
 import org.springframework.web.util.UriComponentsBuilder;
 
+import java.util.Arrays;
+import java.util.List;
 import java.util.Objects;
 
 @Configuration
@@ -35,9 +38,15 @@ public class ElasticsearchConfig{
                 requestConfigBuilder
                         .setConnectTimeout(elasticConfigData.getConnectionTimeout())
                         .setSocketTimeout(elasticConfigData.getSocketTimeout())
-        ).setDefaultHeaders(new org.apache.http.Header[]{
-                new org.apache.http.message.BasicHeader("X-Elastic-Product", "elasticsearch")
-        }).build();
+        ).setHttpClientConfigCallback(httpClientBuilder ->
+                httpClientBuilder.addInterceptorFirst((HttpRequestInterceptor) (request, context) -> {
+                    request.addHeader("X-Elastic-Product", "elasticsearch");
+                })
+        )
+                .setDefaultHeaders(new org.apache.http.Header[] {
+                        new org.apache.http.message.BasicHeader("X-Elastic-Product", "elasticsearch"),
+                        new org.apache.http.message.BasicHeader("Content-Type", "application/json; charset=UTF-8")
+                }).build();
     }
 
     @Bean
