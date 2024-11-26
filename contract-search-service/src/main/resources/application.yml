@@ -2,7 +2,7 @@ spring:
   application:
     name: contract-search-service
   profiles:
-    active: elastic_search
+    active: elastic_query
   cloud:
     config:
       name: contract-search-service,config-client

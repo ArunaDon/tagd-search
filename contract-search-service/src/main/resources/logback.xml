@@ -1,0 +1,7 @@
+<configuration>
+    <property name="DEV_HOME" value="./contract-search-service/logs"/>
+    <property name="APP_NAME" value="contract-search-service"/>
+
+    <include resource="logback-common.xml"/>
+
+</configuration>
