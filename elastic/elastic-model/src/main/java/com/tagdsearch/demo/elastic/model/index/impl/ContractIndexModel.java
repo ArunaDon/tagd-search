@@ -14,7 +14,7 @@ import java.util.List;
 
 @Data
 @Builder
-@Document(indexName = "#{elasticConfigData.indexName}")
+@Document(indexName = "contract-index")
 public class ContractIndexModel implements IndexModel {
 
     @JsonProperty

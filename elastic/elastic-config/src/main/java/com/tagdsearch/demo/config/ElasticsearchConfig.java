@@ -8,7 +8,6 @@ import org.elasticsearch.client.RestClient;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.elasticsearch.client.elc.ElasticsearchTemplate;
-import org.springframework.data.elasticsearch.core.AbstractElasticsearchTemplate;
 import org.springframework.data.elasticsearch.repository.config.EnableElasticsearchRepositories;
 import org.springframework.web.util.UriComponents;
 import org.springframework.web.util.UriComponentsBuilder;
@@ -36,7 +35,9 @@ public class ElasticsearchConfig{
                 requestConfigBuilder
                         .setConnectTimeout(elasticConfigData.getConnectionTimeout())
                         .setSocketTimeout(elasticConfigData.getSocketTimeout())
-        ).build();
+        ).setDefaultHeaders(new org.apache.http.Header[]{
+                new org.apache.http.message.BasicHeader("X-Elastic-Product", "elasticsearch")
+        }).build();
     }
 
     @Bean
