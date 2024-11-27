@@ -37,7 +37,7 @@ public class ContractElasticRepositoryQueryClient implements ElasticQueryClient<
 
     @Override
     public List<ContractIndexModel> getIndexModelByText(String text) {
-        List<ContractIndexModel> searchResult = contractElasticsearchQueryRepository.findByText(text);
+        List<ContractIndexModel> searchResult = contractElasticsearchQueryRepository.findByTitle(text);
         LOG.info("Document with id {} retrieved successfullyl",searchResult.size(),text);
         return searchResult;
     }

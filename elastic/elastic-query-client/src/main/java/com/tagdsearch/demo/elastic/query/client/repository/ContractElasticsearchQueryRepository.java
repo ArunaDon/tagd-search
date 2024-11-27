@@ -8,5 +8,5 @@ import java.util.List;
 
 @Repository
 public interface ContractElasticsearchQueryRepository extends ElasticsearchRepository<ContractIndexModel, String> {
-    List<ContractIndexModel> findByText(String text);
+    List<ContractIndexModel> findByTitle(String title);
 }

@@ -42,11 +42,7 @@ public class ElasticsearchConfig{
                 httpClientBuilder.addInterceptorFirst((HttpRequestInterceptor) (request, context) -> {
                     request.addHeader("X-Elastic-Product", "elasticsearch");
                 })
-        )
-                .setDefaultHeaders(new org.apache.http.Header[] {
-                        new org.apache.http.message.BasicHeader("X-Elastic-Product", "elasticsearch"),
-                        new org.apache.http.message.BasicHeader("Content-Type", "application/json; charset=UTF-8")
-                }).build();
+        ).build();
     }
 
     @Bean
