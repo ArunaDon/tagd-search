@@ -3,6 +3,8 @@ package com.tagdsearch.demo.contract.search.service.api;
 import com.tagdsearch.demo.contract.search.service.model.ElasticQueryServiceRequestModel;
 import com.tagdsearch.demo.contract.search.service.model.ElasticQueryServiceResponseModel;
 import com.tagdsearch.demo.contract.search.service.service.ElasticQueryService;
+import jakarta.validation.Valid;
+import jakarta.validation.constraints.NotEmpty;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.ResponseEntity;
@@ -33,7 +35,7 @@ public class ElasticDocumentController {
     @GetMapping("/{id}")
     public @ResponseBody
     ResponseEntity<ElasticQueryServiceResponseModel>
-    getDocumentById(@PathVariable String id) {
+    getDocumentById(@PathVariable @NotEmpty String id) {
         ElasticQueryServiceResponseModel elasticQueryServiceResponseModel = elasticQueryService.getDocumentById(id);
         LOG.debug("Elasticsearch returned document with id {}", id);
         return ResponseEntity.ok(elasticQueryServiceResponseModel);
@@ -42,7 +44,7 @@ public class ElasticDocumentController {
     @PostMapping("/get-document-by-text")
     public @ResponseBody
     ResponseEntity<List<ElasticQueryServiceResponseModel>>
-    getDocumentByText(@RequestBody ElasticQueryServiceRequestModel elasticQueryServiceRequestModel) {
+    getDocumentByText(@RequestBody @Valid ElasticQueryServiceRequestModel elasticQueryServiceRequestModel) {
         List<ElasticQueryServiceResponseModel> response =
                 elasticQueryService.getDocumetByText(elasticQueryServiceRequestModel.getText());
         LOG.info("Elasticsearch returned {} of documents", response.size());

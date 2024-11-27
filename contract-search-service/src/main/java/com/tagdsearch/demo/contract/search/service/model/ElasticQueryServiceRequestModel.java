@@ -1,5 +1,6 @@
 package com.tagdsearch.demo.contract.search.service.model;
 
+import jakarta.validation.constraints.NotEmpty;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -9,7 +10,9 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
+
 public class ElasticQueryServiceRequestModel {
     private String id;
+    @NotEmpty
     private String text;
 }
